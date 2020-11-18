@@ -1,34 +1,34 @@
-const modalOverlay = document.querySelector(".modal-overlay")
-const card = document.querySelectorAll(".card")
-const modal = document.querySelector(".modal")
-const modal2 =document.querySelector(".modal2")
-const expandOverlay = document.querySelector(".expand-overlay")
+const input =document.querySelector("form input")
+const demo = document.getElementById("demo")
+const button = document.querySelector("form button")
 
-for (let cards of card){
- cards.addEventListener("click",function(){
-     modalOverlay.classList.add("active")
-     const videoId =cards.getAttribute("id")
-     modalOverlay.querySelector("iframe").src =`https://rocketseat.com.br/${videoId}`
-     })
+const cursos=document.querySelectorAll(".cursos div")
+
+for( curso of cursos){
+    curso.addEventListener("click",function(){
+        alert("pagina em andamento")
+
+    })
 
 }
-document.querySelector(".close-modal").addEventListener("click",function(){
-    
-    modalOverlay.classList.remove("active")
-    modalOverlay.classList.remove("expand")
-    modal2.classList.add("modal")
+
+button.addEventListener("click",event =>{
+
+    if( input.value=="" || input.value.indexOf('@') == -1  ){
+        alert("Preencha o email correntamente")
  
-    
-})
-//preciso verificar se a classe expend esta ou não na tela se nao tiver adicione 
-document.querySelector(".expand-overlay").addEventListener("click",function(){
-    if(!modal.classList.contains("expand")){
-      modal.classList.remove("modal")
-      modalOverlay.classList.add("expand")
-    
-    }  
+    }else{
+    alert(`Email enviado com sucesso! Muito obrigado, entraremos em contato`);
+   event.preventDefault()
+    demo.innerHTML = `Damos boas vindas a: ${input.value}`
+
+    }
 })
 
 
 
- 
+
+
+
+
+

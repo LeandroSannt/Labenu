@@ -143,6 +143,26 @@ footer{
     justify-content: center;
 }
 
+
+footer #demo{
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    color: black;
+    transition: all 200ms;
+    display: block;
+}
+
+
+
+
+footer #demo:hover{
+    font-weight: bold;
+    transform: translateX(3px);
+    cursor: context-menu;
+}
+
+
+
 footer form{
     width: 45rem;
     display: grid;
